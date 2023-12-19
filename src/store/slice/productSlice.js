@@ -45,6 +45,9 @@ const productSlice = createSlice({
                     ...el.show,
                     price: (el.discont_price || el.price) >= min && (el.discont_price || el.price) <= max
                 }}))
+        },
+        defaultState(state,{payload}){
+          state.list = payload
         }
     },
     extraReducers: builder => {
@@ -61,5 +64,5 @@ const productSlice = createSlice({
         })
     }
 })
-export const { search, discountedItems, sorted, priceMinMax } = productSlice.actions
+export const { search, discountedItems, sorted, priceMinMax,defaultState } = productSlice.actions
 export default productSlice.reducer
