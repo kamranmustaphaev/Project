@@ -1,0 +1,17 @@
+.btn{
+    cursor: pointer;
+}
+.white{
+    background-color: white;
+    color: black;
+}
+.green{
+    border: none;
+    background-color: green;
+    color: white;
+}
+.transparent{
+    border: 2px solid #FFF;
+    background-color: transparent;
+    color: white;
+}

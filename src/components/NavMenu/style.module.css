@@ -1,0 +1,147 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.container a{
+    text-decoration: none;
+    color: black;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+}
+.nav_search{
+    height: 40px;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(130, 129, 129, 0.123);
+}
+.nav_search input{
+    width: 100%;
+    border: none;
+    padding: 0px 20px;
+    background: none;
+    outline: none;
+}
+.search_icon{
+    font-size: 32px;
+    padding-right:  10px;
+    cursor: pointer;
+    color: #339933;
+}
+.btn {
+    padding: 10px ;
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.catalog{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 150px;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 17px -6px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+a.active{
+    color: #339933;
+}
+.catalog a{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.category_link{
+    cursor: pointer;
+}
+.catalog:hover{
+    flex-direction: column;
+}
+.catalog a:hover{
+    background-color: #339933;
+    color: white;
+    transition: background 0.5s, opacity 0.5s;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+} 
+.links{
+    display: flex;
+    gap: 35px;
+}
+.basket {
+    font-size: 30px;
+    float: right;
+}
+.count{
+    position: absolute;
+    color: #F08804;
+    top: 20px;
+    right: 30px;
+}
+.active{
+    color: green;
+}
+.nav_righte{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bars{
+    display: none;
+    font-size: 24px;
+    color: #339933;
+}
+
+
+@media(max-width: 800px){
+    .nav_righte{
+        gap: 10px;
+    }
+    .bars{
+        display: block;
+        cursor: pointer;
+    }
+    .links{
+        pointer-events: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 20px;
+        background-color: white;
+        border-bottom-left-radius: 20px;
+        opacity: 0;
+        transition: opacity,transform;
+        transition-duration: 0.8s;
+        transform: translateY(-100%)
+    }
+    .links a{
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .links a:hover{
+        background-color: #F2F2F2;
+    }
+    .nav_active{
+        pointer-events: all;
+        opacity: 1;
+        transform: translateY(0)
+    }
+    
+}

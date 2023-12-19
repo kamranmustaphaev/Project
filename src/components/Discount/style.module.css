@@ -1,0 +1,60 @@
+.container{
+    width: 100%;
+    height: 475px;
+    color: white;
+    font-weight: 700;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
+}
+.container form{
+    max-width: 450px;
+}
+.container label{
+    font-size: 90px;
+}
+.container p:first-child{
+    font-size: 50px;
+}
+.container input{
+    font-size: 24px;
+    border: none;
+    padding: 25px ;
+    border-radius: 25px;
+    width: 100%;
+   
+}
+input[type="number"]::-webkit-inner-spin-button{
+-webkit-appearance: none;
+
+}
+.container input:focus,:hover{
+    outline: none;
+}
+.container button{
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    border-radius: 25px;
+    width: 100%;
+}
+.message{
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    ;position: absolute;
+}
+@media (max-width: 1024px) {
+    .container img{
+        display: none;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

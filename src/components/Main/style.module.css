@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 638px;
+    background-image: url('./back_img.png');
+    background-position: right;
+    color: white;
+    font-weight: 700;
+    object-fit: contain;
+}
+.sale{
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sale h2{
+    font-size: 63px;
+}
+.btn{
+    width: 100%;
+    border: none;
+    padding: 24px;
+    border-radius: 13px;
+    font-size: 25px;
+    color: #339933;
+}
+@media (max-width: 800px) {
+    .container{
+        height: 500px;
+    }
+    .sale h2{
+        font-size: 24px;
+    }
+    
+}
+
+
+

@@ -1,0 +1,17 @@
+.categories{
+    display: flex;
+    align-items: center;
+    gap: 20px 20px;
+    font-weight: 700;
+    margin: 20px auto;
+}
+.categories h2{
+    font-size: 40px;
+}
+.categories a{
+    text-decoration: none;
+    color: #8B8B8B;
+    font-size: 12px;
+    border: 2px solid #8B8B8B;
+    padding: 7px;
+}

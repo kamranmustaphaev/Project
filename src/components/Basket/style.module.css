@@ -1,0 +1,124 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+    gap: 20px;
+}
+.container h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.back_to_store{
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 40px;
+    border-radius: 20px;
+}
+.back_to_store a{
+    color: white;
+}
+.basket{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.order{
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 450px;
+}
+.order p:first-child{
+    font-size: 28px;
+    font-weight: 600;
+}
+.order input{
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+.order button{
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+.total_sum{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total_sum p:first-child{
+    font-size: 24px;
+    font-weight: 500;
+}
+.total_sum p:last-child{
+    font-size: 24px;
+    font-weight: 600;
+}
+.total_sum span{
+    color: #F08804;
+    font-size: 20px;
+}
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 80px;
+}
+.empty button{
+    padding: 10px 50px;
+    border-radius: 25px;
+    font-size: 25px;
+    
+}
+.empty a{
+    color: white;
+    font-weight: 600;
+}
+@media(max-width: 800px){
+    .basket{
+        gap:0;
+    }
+    .order{
+        padding: 10px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+        max-width: 200px;
+    }
+    .order p:first-child{
+        font-size: 20px;
+    }
+    .order input,.order button{
+        width: 120%;
+        padding: 10px;
+    }
+    .total_sum{
+        display: block;
+        
+    }
+    .total_sum p:first-child{
+        display: none;
+    }
+    .total_sum p:last-child{
+        font-size: 18px;
+        font-weight: 600;
+        
+    }
+    .total_sum span{
+        font-size: 14px;
+    }
+}
