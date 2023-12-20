@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { useDispatch, useSelector} from 'react-redux'
 import { search } from '../../store/slice/productSlice'
 import { VscThreeBars } from "react-icons/vsc";
+import { useBasket } from '../../hooks/useBasket'
 
 
 export default function NavMenu() {
@@ -19,12 +20,7 @@ export default function NavMenu() {
 
   const categories = useSelector(({categories}) => categories.list)
   
-  const basket = useSelector(({basket}) => basket.list)
-  const products = useSelector(({products}) => products.list)
-  const basketProducts = basket.map(el => {
-    const product = products.find(({id}) => id === el.id )  
-    return {...el, ...product }
-   })
+  const basketProducts = useBasket()
   const totalCount = basketProducts.reduce((acc, el) => acc +  el.count,0)
 
   const linksElem = useRef()
@@ -77,7 +73,8 @@ export default function NavMenu() {
           <VscThreeBars className={s.bars}
            onClick={()=>setNavLinksElemVisible(!navLinksElemVisible)}/>
           <Link to={'/basket'} >
-            <HiOutlineShoppingBag className={s.basket} /><p className={s.count}>{totalCount}</p>
+            <HiOutlineShoppingBag className={s.basket} />
+            <p className={s.count}>{totalCount}</p>
           </Link>
         </div>
       </Container>

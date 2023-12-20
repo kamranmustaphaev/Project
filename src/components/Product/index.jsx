@@ -10,7 +10,7 @@ export default function Product({ id, image, title, price, discont_price }) {
   const [showNotification, setShowNotification] = useState(false);
 
   const handlerAddToBasket = () => {
-    dispatch(addToBasket(id));
+    dispatch(addToBasket(+id));
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);

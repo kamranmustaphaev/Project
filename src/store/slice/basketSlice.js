@@ -13,27 +13,26 @@ const basketSlice = createSlice({
     reducers: {
         addToBasket(state, {payload}) {
           const target = state.list.find(el => el.id === payload)
-          console.log(payload);
           if(target){
             target.count++
           }
           else{
-            state.list.push({id: +payload, count: 1,basketId: Date.now()})
+            state.list.push({id: payload, count: 1})
           }
           write(state.list)
         },
         remove(state, {payload}){
-           state.list = state.list.filter(el => el.basketId !== payload)
+           state.list = state.list.filter(el => el.id !== payload)
            write(state.list)
         },
         incrCount(state, {payload}){
-          state.list.find(el => el.basketId === payload).count++
+          state.list.find(el => el.id === payload).count++
           write(state.list)
         },
         decrCount(state, {payload}){
-          const target = state.list.find(el => el.basketId === payload)
+          const target = state.list.find(el => el.id === payload)
           if(target.count === 1){
-            state.list = state.list.filter(el => el.basketId !== payload)
+            state.list = state.list.filter(el => el.id !== payload)
           }
           else{
             target.count--

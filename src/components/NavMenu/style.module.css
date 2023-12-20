@@ -90,7 +90,8 @@ a.active{
     position: absolute;
     color: #F08804;
     top: 20px;
-    right: 30px;
+    right: 20px;
+    font-size: 14px;
 }
 .active{
     color: green;

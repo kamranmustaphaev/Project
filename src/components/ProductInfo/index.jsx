@@ -12,14 +12,14 @@ export default function ProductInfo() {
   const [showNotification, setShowNotification] = useState(false);
 
   const handlerAddToBasket = () => {
-    dispatch(addToBasket(id));
+    dispatch(addToBasket(+id));
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
     }, 2000);
   };
 
-  const product = useSelector(({ products }) => products).list.find(el => +id === el.id)
+  const product = useSelector(({ products }) => products.list).find(el => +id === el.id)
   const { title, image, price, discont_price, description } = product ?? ''
 
   return (

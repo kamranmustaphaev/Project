@@ -3,18 +3,14 @@ import s from './style.module.css'
 import Container from '../UI/Container'
 import Button from '../UI/Button'
 import BasketItem from '../BasketItem'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { useBasket } from '../../hooks/useBasket'
 
 
 export default function Basket() {
-    const basket = useSelector(({ basket }) => basket.list)
-    const products = useSelector(({ products }) => products.list)
-    const basketProducts = basket.map(el => {
-        const product = products.find(({ id }) => id === el.id)
-        return { ...el, ...product }
-    })
+    const basketProducts = useBasket()
+    
     const totalSum = basketProducts.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0)
     const totalCount = basketProducts.reduce((acc, el) => acc + el.count, 0)
 
