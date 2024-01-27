@@ -1,12 +1,14 @@
 import Button from '../UI/Button'
 import s from './style.module.css'
 import Container from '../UI/Container'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addToBasket } from '../../store/slice/basketSlice'
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { fetchSingleProduct } from '../../store/slice/productSlice'
 
 export default function ProductInfo() {
+  const [product, setProduct] = useState(null)
   const dispatch = useDispatch()
   const { id } = useParams()
   const [showNotification, setShowNotification] = useState(false);
@@ -19,7 +21,10 @@ export default function ProductInfo() {
     }, 2000);
   };
 
-  const product = useSelector(({ products }) => products.list).find(el => +id === el.id)
+  useEffect(() => {
+    fetchSingleProduct(+id, setProduct)
+  }, [id])
+
   const { title, image, price, discont_price, description } = product ?? ''
 
   return (
@@ -28,7 +33,7 @@ export default function ProductInfo() {
         product && (<>
           <h2 className={s.title}>{title}</h2>
           <div className={s.item}>
-            <img src={`http://localhost:3333${image}`} alt={title} />
+            <img src={`http://localhost:3001${image}`} alt={title} />
 
             <div className={s.item_info}>
               <div className={s.price}>

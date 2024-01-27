@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import s from './style.module.css'
 import Container from '../UI/Container'
-import { useDispatch, useSelector } from 'react-redux'
-import { defaultState, discountedItems, priceMinMax, sorted } from '../../store/slice/productSlice'
+import { useDispatch} from 'react-redux'
+import { discountedItems, priceMinMax, sorted } from '../../store/slice/productSlice'
 import { useLocation } from 'react-router-dom'
 
 
 export default function Filter() {
     const dispatch = useDispatch()
     const location = useLocation()
-    const products = useSelector(({products}) => products.list)
-    useEffect(() => {
-        return () => {
-            dispatch(defaultState(products))  
-        }
-    }, [dispatch, location.pathname]);
+    // const products = useSelector(({products}) => products.list)
+    // useEffect(() => {
+    //     return () => {
+    //         dispatch(defaultState(products))  
+    //     }
+    // }, [dispatch, location.pathname]);
 
     const [price, setPrice] = useState({ min: 0, max: Infinity })
     

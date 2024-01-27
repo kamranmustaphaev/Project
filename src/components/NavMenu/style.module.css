@@ -118,6 +118,7 @@ a.active{
         display: block;
         cursor: pointer;
     }
+   
     .links{
         pointer-events: none;
         flex-direction: column;
@@ -131,7 +132,7 @@ a.active{
         transition: opacity,transform;
         transition-duration: 0.8s;
         transform: translateY(-100%)
-    }
+    } 
     .links a{
         padding: 10px;
         border-radius: 20px;

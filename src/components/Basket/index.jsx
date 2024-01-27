@@ -10,13 +10,13 @@ import { useBasket } from '../../hooks/useBasket'
 
 export default function Basket() {
     const basketProducts = useBasket()
-    
+
     const totalSum = basketProducts.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0)
     const totalCount = basketProducts.reduce((acc, el) => acc + el.count, 0)
 
     const { register, handleSubmit, formState: { errors } } = useForm()
     const submit = data => {
-        fetch('http://localhost:3333/order/send',
+        fetch('http://localhost:3001/order/send',
             {
                 method: 'POST',
                 headers: {

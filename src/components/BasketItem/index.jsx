@@ -8,7 +8,7 @@ export default function BasketItem({ id, count, price, discont_price, title, ima
   const dispatch = useDispatch()
   return (
     <div className={s.item}>
-      <img src={`http://localhost:3333${image}`} alt={title} />
+      <img src={`http://localhost:3001${image}`} alt={title} />
       <div className={s.count_block}>
         <p >{title}</p>
         <div className={s.count}>

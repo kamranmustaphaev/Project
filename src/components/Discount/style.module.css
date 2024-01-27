@@ -42,10 +42,10 @@ input[type="number"]::-webkit-inner-spin-button{
 }
 .message{
     padding: 5px;
-    color: black;
-    font-size: 18px;
-    font-weight: 300;
-    ;position: absolute;
+    color: rgb(243, 196, 196);
+    font-size: 20px;
+    font-weight: 200;
+    position: absolute;
 }
 @media (max-width: 1024px) {
     .container img{

@@ -1,4 +1,4 @@
-import {  Route, Routes } from 'react-router-dom';
+import {  Route, Routes} from 'react-router-dom';
 import NavMenu from '../NavMenu';
 import './App.css';
 import HomePage from '../pages/HomePage';
@@ -22,7 +22,7 @@ function App() {
     dispatch(fetchCategories())
     dispatch(fetchProducts())
   },[dispatch])
-
+ 
   return (
    <>
     <NavMenu/>

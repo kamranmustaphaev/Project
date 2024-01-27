@@ -13,10 +13,12 @@ import { VscThreeBars } from "react-icons/vsc";
 import { useBasket } from '../../hooks/useBasket'
 
 
+
 export default function NavMenu() {
+  const dispatch = useDispatch()
+
   const [navLinksElemVisible, setNavLinksElemVisible] = useState();
 
-  const dispatch = useDispatch()
 
   const categories = useSelector(({categories}) => categories.list)
   
@@ -46,6 +48,9 @@ export default function NavMenu() {
   const removeClass = () => {
     linksElem.current.classList.remove(s.menu) 
   }
+  const searchHandle = ({target}) => {
+    dispatch(search(target.value))
+  }
   const navIsActive = ({ isActive }) => isActive ? s.active : ''
   return (
     <nav>
@@ -55,8 +60,7 @@ export default function NavMenu() {
           <div className={s.nav_search}>
             <Button onClick={linksBtnHandler} 
             type={'green'} className={s.btn}>All <MdArrowDropDown className={s.category_link}/></Button>
-            <input onChange={({target}) => 
-            dispatch(search(target.value))} type="text" placeholder='search' />
+            <input onChange={searchHandle} type="text" placeholder='search' />
             <Link to={'/products'}><FaSearch className={s.search_icon}/></Link>
           </div>
           <div className={s.catalog} ref={linksElem}>

@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 export default function Discount() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const submit = data => {
-    fetch('http://localhost:3333/sale/send',
+    fetch('http://localhost:3001/sale/send',
       {
         method: 'POST',
         headers: {
@@ -32,7 +32,9 @@ export default function Discount() {
             }
           )} />
         {errors.phoneNumber && <p className={s.message}>{errors.phoneNumber.message}</p>}
-        <Button component={'button'} type={'transparent'}>Get a discount</Button>
+        <Button component={'button'} type={'transparent'}>Get a discount
+          {/* {phoneNumber.status === "OK" ? "discount issued" : "Get a discount" } */}
+        </Button>
       </form>
     </Container>
 

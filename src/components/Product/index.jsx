@@ -19,7 +19,7 @@ export default function Product({ id, image, title, price, discont_price }) {
   return (
     <div className={s.item}>
       <Link to={`/products/product/${id}`}>
-        <img src={`http://localhost:3333${image}`} alt={title} />
+        <img src={`http://localhost:3001${image}`} alt={title} />
       </Link>
       <div className={s.priceAndBtn}>
         <div className={s.priceBlock}>
